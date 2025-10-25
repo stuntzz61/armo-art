@@ -332,7 +332,7 @@ function scrollToTopThen(cb){
                     Написать в Telegram
                   </button>
                 </div>
-                <p className="text-[11px] text-neutral-500 mt-3">Нажимая «Написать в Telegram», вы соглашаетесь с условиями и политикой конфиденциальности.</p>
+          
               </form>
             </aside>
           </div>
