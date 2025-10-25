@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hongqi — аренда с водителем | Армо-Арт</title>
+  <meta name="description" content="Армо-Арт — Hongqi H5 / H5 рестайлинг / H9 с водителем. Онлайн-калькулятор и заявка в Telegram." />
+  <meta name="theme-color" content="#0b0c10" />
+
+  <!-- минимальный favicon (золотая «галочка») -->
+  <link rel="icon" type="image/svg+xml"
+        href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="%23fff4d6"/><stop offset="100%" stop-color="%23d6a842"/></linearGradient><path d="M6 26 L16 6 L26 26" fill="none" stroke="url(%23g)" stroke-width="3" stroke-linecap="round"/></svg>' />
+
+  <!-- Fonts + Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: { 500:'#d6a842', 600:'#bf9534', 700:'#9f7f2a' },
+            base:   { 900:'#0b0c10', 800:'#121319', 700:'#1b1d23' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root{--bg:#0b0c10;--panel:rgba(255,255,255,.03)}
+    body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:#e8e8e8}
+    .panel{background:var(--panel);border:1px solid rgba(255,255,255,.06)}
+    .btn{transition:.15s}
+    .btn:hover{filter:brightness(1.04)}
+    .bg-panel{ background: var(--panel); }
+    /* убираем любые рамки у фоток */
+    img, .no-frame{border:none !important; outline:0 !important; box-shadow:none !important; border-radius:0 !important;}
+    /* тёмные нативные пикеры даты/времени */
+    input[type="date"], input[type="time"]{
+      color-scheme: dark;
+      background-color:#121319; color:#e8e8e8;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator{
+      filter: invert(1) brightness(1.1); opacity:.85;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React + Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- App -->
+  <script type="text/babel" src="./app.jsx"></script>
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(App));
+  </script>
+</body>
+</html>
